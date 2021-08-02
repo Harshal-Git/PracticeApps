@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root@123</property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/mylocaldb?useSSL=false</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!--  allow auto table creation  -->
+        <!-- create / update options: create will always create a new table -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- print queries -->
+        <property name="show_sql">true</property>
+        
+        <!-- enable cache configuration -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+        
+        <!--  enable second level cache for query -->
+        <property name="hibernate.cache.use_query_cache">true</property>
+        
+    </session-factory>
+</hibernate-configuration>
